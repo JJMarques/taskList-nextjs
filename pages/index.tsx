@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button, useColorMode } from '@chakra-ui/react'
+import { Button, Heading, useColorMode } from '@chakra-ui/react'
 import { Divider, useMediaQuery } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import TodoForm from '../components/TodoForm'
@@ -29,7 +29,11 @@ export default function Index() {
     //
     return (
         <>
-            <Button onClick={toggleColorMode} mb="2em">
+            <Button 
+                onClick={toggleColorMode} 
+                mb="2em" 
+                aria-label="Change color mode"
+            >
                 {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
             </Button>
             <TodoForm 
@@ -59,6 +63,13 @@ export default function Index() {
                     taskListChanged={taskListChanged}
                 />
             ))}
+            <Heading
+                size="xs"
+                color="gray.500"
+                fontWeight="400"
+            > 
+                Made by José Marques
+            </Heading>
         </>
     )
 }

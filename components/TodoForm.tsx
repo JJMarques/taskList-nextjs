@@ -28,11 +28,13 @@ export default function TodoForm({ taskList, setTaskList, taskListChanged, setTa
             setTimeout(() => {
                 setErrMsg('')
             }, 3000)
-        } else if (inputText.length > 50) {
-            setErrMsg('Your task is too long!')
+            setInputText('')
+        } else if (inputText.length > 25) {
+            setErrMsg('Please keep your tasks short!')
             setTimeout(() => {
                 setErrMsg('')
             }, 3000)
+            setInputText('')
         } else {
             setErrMsg('')
             setTaskList([...taskList, inputText])

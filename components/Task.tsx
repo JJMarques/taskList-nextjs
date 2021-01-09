@@ -42,6 +42,7 @@ export default function Task({ taskName, taskList, setTaskList, index, setTaskLi
             </Heading>
             <Button
                 colorScheme="red"
+                aria-label="Delete the task"
                 onClick={() => {
                     taskList.splice(index, 1)
                     setTaskList(taskList)
